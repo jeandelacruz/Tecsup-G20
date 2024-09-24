@@ -1,4 +1,4 @@
-# Data Science
+# Backend G20
 
 <img align="right" width="100" height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Python_logo_01.svg/2048px-Python_logo_01.svg.png">
 
