@@ -107,7 +107,7 @@ Ahora, cada atributo depende completamente de la clave primaria en su respectiva
 
 Ahora, **nombre_jefe** depende directamente de **area_id** en la tabla **areas**.
 
-##### Ejercicio
+## Ejercicio
 
 `Tabla sin normalizar`
 
@@ -124,6 +124,65 @@ Aqui, tenemos redundancia en los datos.
 
 Solucion:
 
-- Ejecuten la 1NF
+- Ejecuten la 1NF (Ya se encuentra solucionada)
+
+| venta_id | cliente_nombre | cliente_email  | producto_nombre | cantidad | precio_unitario | vendedor_nombre | vendedor_telefono |
+| -------- | -------------- | -------------- | --------------- | -------- | --------------- | --------------- | ----------------- |
+| 1        | Juan           | juan@gmail.com | Televisor       | 1        | 500             | Pedro           | 985566888         |
+| 2        | Juan           | juan@gmail.com | Lavadora        | 2        | 300             | Pedro           | 985566888         |
+| 3        | Ana            | ana@gmail.com  | Televisor       | 1        | 500             | Laura           | 987123456         |
+
 - Ejecuten la 2NF
+
+  - Tabla **ventas**
+
+    | venta_id | cliente_id | producto_nombre | cantidad | precio_unitario | vendedor_id |
+    | -------- | ---------- | --------------- | -------- | --------------- | ----------- |
+    | 1        | 1          | Televisor       | 1        | 500             | 1           |
+    | 2        | 1          | Lavadora        | 2        | 300             | 1           |
+    | 3        | 2          | Televisor       | 1        | 500             | 2           |
+
+  - Tabla **clientes**
+
+    | cliente_id | cliente_nombre | cliente_email  |
+    | ---------- | -------------- | -------------- |
+    | 1          | Juan           | juan@gmail.com |
+    | 2          | Ana            | ana@gmail.com  |
+
+  - Tabla **vendedores**
+
+    | vendedor_id | vendedor_nombre | vendedor_telefono |
+    | ----------- | --------------- | ----------------- |
+    | 1           | Pedro           | 985566888         |
+    | 2           | Laura           | 987123456         |
+
 - Ejecuten la 3NF
+
+  - Tabla **ventas**
+
+    | venta_id | cliente_id | producto_id | cantidad | vendedor_id |
+    | -------- | ---------- | ----------- | -------- | ----------- |
+    | 1        | 1          | 1           | 1        | 1           |
+    | 2        | 1          | 2           | 2        | 1           |
+    | 3        | 2          | 1           | 1        | 2           |
+
+  - Tabla **clientes**
+
+    | cliente_id | cliente_nombre | cliente_email  |
+    | ---------- | -------------- | -------------- |
+    | 1          | Juan           | juan@gmail.com |
+    | 2          | Ana            | ana@gmail.com  |
+
+  - Tabla **vendedores**
+
+    | vendedor_id | vendedor_nombre | vendedor_telefono |
+    | ----------- | --------------- | ----------------- |
+    | 1           | Pedro           | 985566888         |
+    | 2           | Laura           | 987123456         |
+
+  - Tabla **productos**
+
+    | product_id | producto_nombre | producto_precio_unitario |
+    | ---------- | --------------- | ------------------------ |
+    | 1          | Televisor       | 500                      |
+    | 2          | Lavadora        | 300                      |
