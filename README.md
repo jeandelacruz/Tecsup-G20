@@ -54,6 +54,8 @@ Los pilares de POO:
 
 - [Introduccion](base_datos/BASE_DATOS.md)
   - [Relacional](base_datos/RELATIONAL.md)
+    - [DDL](base_datos/DDL.md)
+    - [DML](base_datos/DML.md)
 
 # Frameworks y Microframeworks
 
