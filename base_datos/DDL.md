@@ -49,3 +49,33 @@ CREATE TABLE nombre_tabla (
     name VARCHAR(100)
 );
 ```
+
+5. Eliminar una tabla
+
+```sql
+DROP TABLE nombre_tabla;
+```
+
+6. Modificar una tabla para agregar una nueva columna
+
+```sql
+ALTER TABLE nombre_tabla ADD COLUMN nueva_columna tipo_dato_nueva_columna;
+```
+
+7. Renombrar tabla
+
+```sql
+ALTER TABLE nombra_tabla RENAME TO nuevo_nombra_tabla;
+```
+
+8. Modificar una columna (renombrar el nombre de una columna)
+
+```sql
+ALTER TABLE nombre_tabla RENAME COLUMN nombre_columna TO nuevo_nombre_columna;
+```
+
+9. Eliminar una columna
+
+```sql
+ALTER TABLE nombre_tabla DROP COLUMN nombre_columna;
+```
